@@ -1,0 +1,24 @@
+#include"stdio.h"
+#include"string.h"
+char *fun(char *str1,char *str2)
+{
+ char *str=str1;
+ while(*str!='\0')
+  str++;
+ while(*str2!='\0')
+  *str++=*str2++;
+ *str='\0';
+ return(str);
+}
+main()
+{
+ char str1[50],str2[50];
+ char *str;
+ printf("从键盘输入两个字符串，将它们合成一个新字符创。\n");
+ printf("输入第一个字符串：\n");
+ gets(str1);
+ printf("输入第二个字符串：\n");
+ gets(str2);
+ str=fun(str1,str2);
+ puts(str);
+}
